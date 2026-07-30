@@ -1,70 +1,167 @@
-# RAG Chunking Visualizer
+# 📚 RAG Chunking Visualizer
 
-An interactive and educational **Streamlit web application** that visualizes different text chunking techniques for Retrieval-Augmented Generation (RAG). Users can input text, configure parameters, and immediately see how text is split into chunks with visualizations similar to ChunkViz.
+An interactive **Streamlit** application that helps you understand and compare different text chunking strategies used in **Retrieval-Augmented Generation (RAG)**. Experiment with various chunking methods, adjust parameters in real time, and visualize how text is split into chunks for downstream retrieval tasks.
 
----
+## 🚀 Live Demo
 
-## Features
+Try the deployed application here:
 
-### 📖 Theory Page
-- Explains what chunking is and why it is critical in RAG pipelines.
-- Explains character, recursive, token, sentence, paragraph, fixed-size, sliding-window, and semantic chunking mechanisms.
-- Covers advantages, disadvantages, best use cases, and simple examples for each method.
+**https://rag-chunking-visualizer-lunar.streamlit.app/**
 
-### 🎮 Playground Page
-- **Interactive Controls:** Select any chunking technique and configure parameters dynamically (e.g. Chunk Size, Overlap Size, Separators, Token Encodings, Semantic Percentiles).
-- **Multiple Chunk Visualizations:**
-  - **Inline Highlight Mode:** Alternating pastel highlights across the entire document.
-  - **Chunk Card Mode:** Separate cards for each chunk with overlapping text highlighted in **bold** to immediately show context duplication.
-- **Document-Wide Analytics:** Total characters, words, average/max/min chunk sizes, and a Plotly distribution chart.
+## 📌 Overview
 
----
+Chunking is one of the most important steps in building an effective RAG pipeline. Different chunking strategies can significantly impact retrieval quality, context preservation, and overall LLM performance.
 
-## Project Structure
+This application provides an interactive playground to explore how different chunking techniques work, making it easier to understand their strengths, trade-offs, and ideal use cases.
 
-```
+## ✨ Features
+
+### 📖 Theory
+
+Learn the fundamentals of text chunking, including:
+
+- Character Chunking
+- Recursive Character Chunking
+- Token Chunking
+- Sentence Chunking
+- Paragraph Chunking
+- Fixed-Size Chunking
+- Sliding Window Chunking
+- Semantic Chunking
+
+Each section includes:
+- Explanation of how the method works
+- Advantages and disadvantages
+- Best use cases
+- Simple examples
+
+### 🎮 Interactive Playground
+
+Experiment with chunking techniques in real time.
+
+Features include:
+
+- Select from multiple chunking strategies
+- Configure chunk size and overlap
+- Customize separators and token encodings
+- Adjust semantic chunking thresholds
+- Compare different chunking behaviors instantly
+
+### 📊 Visualizations & Analytics
+
+The app provides multiple ways to inspect generated chunks:
+
+- Inline highlighted chunk visualization
+- Individual chunk cards
+- Overlap highlighting between chunks
+- Chunk size distribution charts (Plotly)
+- Document statistics including:
+  - Total characters
+  - Total words
+  - Number of chunks
+  - Average chunk size
+  - Minimum and maximum chunk lengths
+
+## 🛠️ Tech Stack
+
+- Python
+- Streamlit
+- Plotly
+- NLTK
+- Tiktoken
+- Scikit-learn
+- TF-IDF & Cosine Similarity
+
+## 📂 Project Structure
+
+```text
 chunking_visualizer/
 │
-├── app.py                     # App entrypoint (st.navigation setup)
+├── app.py                     # Streamlit application entry point
 │
 ├── pages/
-│   ├── theory.py              # Theory explanation page
-│   └── playground.py          # Playground UI and visualizer columns
+│   ├── theory.py              # Theory page
+│   └── playground.py          # Interactive playground
 │
 ├── chunkers/
-│   ├── __init__.py            # Module exports
-│   ├── character.py           # Character-level chunker
-│   ├── recursive.py           # Recursive character-level chunker
-│   ├── token.py               # Token-based chunker (using tiktoken)
-│   ├── sentence.py            # Sentence-based chunker (using NLTK/regex)
-│   ├── paragraph.py           # Paragraph-based chunker (split on \n\n)
-│   ├── sliding.py             # Sliding window chunker
-│   └── semantic.py            # TF-IDF Cosine Similarity semantic chunker
+│   ├── character.py
+│   ├── recursive.py
+│   ├── token.py
+│   ├── sentence.py
+│   ├── paragraph.py
+│   ├── sliding.py
+│   └── semantic.py
 │
 ├── utils/
-│   ├── __init__.py            # Module exports
-│   ├── helpers.py             # Default sample texts
-│   ├── statistics.py          # Analytical metrics and charts
-│   └── visualization.py       # HSL palette, overlap bolding, and HTML renderer
+│   ├── helpers.py
+│   ├── statistics.py
+│   └── visualization.py
 │
-└── requirements.txt           # Project dependencies
+├── requirements.txt
+└── README.md
 ```
 
----
+## ▶️ Run Locally
 
-## How to Run
+### 1. Clone the repository
 
-1. **Activate the Virtual Environment:**
-   ```powershell
-   .venv\Scripts\Activate.ps1
-   ```
+```bash
+git clone <your-repository-url>
+cd <your-project-folder>
+```
 
-2. **Install Dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 2. Create a virtual environment
 
-3. **Start the Application:**
-   ```bash
-   streamlit run app.py
-   ```
+```bash
+python -m venv .venv
+```
+
+### 3. Activate the virtual environment
+
+**Windows**
+
+```bash
+.venv\Scripts\activate
+```
+
+**macOS / Linux**
+
+```bash
+source .venv/bin/activate
+```
+
+### 4. Install the required dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 5. Launch the Streamlit application
+
+```bash
+streamlit run app.py
+```
+
+The application will start locally and can typically be accessed at:
+
+```
+http://localhost:8501
+```
+
+## 📖 Usage
+
+1. Launch the application.
+2. Navigate to the **Theory** page to learn about chunking methods.
+3. Open the **Playground** page.
+4. Enter or paste your own text.
+5. Select a chunking strategy.
+6. Adjust the available parameters.
+7. Explore the generated chunks and visualizations.
+
+## 🎯 Purpose
+
+This project is designed for developers, students, and AI practitioners who want to better understand how chunking affects retrieval performance in modern RAG systems. It serves as both a learning resource and an experimentation tool for comparing different chunking strategies.
+
+## 📄 License
+
+This project is available for educational and learning purposes.
