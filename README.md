@@ -2,7 +2,7 @@
 
 An interactive **Streamlit** application that helps you understand and compare different text chunking strategies used in **Retrieval-Augmented Generation (RAG)**. Experiment with various chunking methods, adjust parameters in real time, and visualize how text is split into chunks for downstream retrieval tasks.
 
-## 🚀 Live Demo
+## 🚀 Live Demo:
 
 Try the deployed application here:
 
