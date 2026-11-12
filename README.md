@@ -1,66 +1,28 @@
 # 📚 RAG Chunking Visualizer
 
-An interactive **Streamlit** application that helps you understand and compare different text chunking strategies used in **Retrieval-Augmented Generation (RAG)**. Experiment with various chunking methods, adjust parameters in real time, and visualize how text is split into chunks for downstream retrieval tasks.
+An interactive **Streamlit application** to explore and compare different text chunking strategies used in **Retrieval-Augmented Generation (RAG)**.
 
-## 🚀 Live Demo:
+Experiment with chunking methods, customize parameters, and visualize how text is divided into chunks for better document retrieval.
 
-Try the deployed application here:
+## 🚀 Live Demo
 
-**https://rag-chunking-visualizer-lunar.streamlit.app/**
-
-## 📌 Overview
-
-Chunking is one of the most important steps in building an effective RAG pipeline. Different chunking strategies can significantly impact retrieval quality, context preservation, and overall LLM performance.
-
-This application provides an interactive playground to explore how different chunking techniques work, making it easier to understand their strengths, trade-offs, and ideal use cases.
+**Try the RAG Chunking Visualizer**
 
 ## ✨ Features
 
-### 📖 Theory
-
-Learn the fundamentals of text chunking, including:
-
-- Character Chunking
-- Recursive Character Chunking
-- Token Chunking
-- Sentence Chunking
-- Paragraph Chunking
-- Fixed-Size Chunking
-- Sliding Window Chunking
-- Semantic Chunking
-
-Each section includes:
-- Explanation of how the method works
-- Advantages and disadvantages
-- Best use cases
-- Simple examples
-
-### 🎮 Interactive Playground
-
-Experiment with chunking techniques in real time.
-
-Features include:
-
-- Select from multiple chunking strategies
-- Configure chunk size and overlap
-- Customize separators and token encodings
-- Adjust semantic chunking thresholds
-- Compare different chunking behaviors instantly
-
-### 📊 Visualizations & Analytics
-
-The app provides multiple ways to inspect generated chunks:
-
-- Inline highlighted chunk visualization
-- Individual chunk cards
-- Overlap highlighting between chunks
-- Chunk size distribution charts (Plotly)
-- Document statistics including:
-  - Total characters
-  - Total words
-  - Number of chunks
-  - Average chunk size
-  - Minimum and maximum chunk lengths
+- **Chunking Theory:** Understand different chunking techniques with explanations, advantages, limitations, and examples.
+- **Interactive Playground:** Experiment with chunk sizes, overlap, separators, and semantic thresholds.
+- **Multiple Strategies:**
+  - Character Chunking
+  - Recursive Character Chunking
+  - Token Chunking
+  - Sentence Chunking
+  - Paragraph Chunking
+  - Fixed-Size Chunking
+  - Sliding Window Chunking
+  - Semantic Chunking
+- **Visualizations:** Explore highlighted chunks, overlapping text, and chunk size distribution charts.
+- **Statistics:** Analyze character count, word count, number of chunks, and average, minimum, and maximum chunk sizes.
 
 ## 🛠️ Tech Stack
 
@@ -72,96 +34,63 @@ The app provides multiple ways to inspect generated chunks:
 - Scikit-learn
 - TF-IDF & Cosine Similarity
 
-## 📂 Project Structure
+## ⚙️ Run Locally
 
-```text
-chunking_visualizer/
-│
-├── app.py                     # Streamlit application entry point
-│
-├── pages/
-│   ├── theory.py              # Theory page
-│   └── playground.py          # Interactive playground
-│
-├── chunkers/
-│   ├── character.py
-│   ├── recursive.py
-│   ├── token.py
-│   ├── sentence.py
-│   ├── paragraph.py
-│   ├── sliding.py
-│   └── semantic.py
-│
-├── utils/
-│   ├── helpers.py
-│   ├── statistics.py
-│   └── visualization.py
-│
-├── requirements.txt
-└── README.md
-```
+**1\. Clone the repository**
 
-## ▶️ Run Locally
-
-### 1. Clone the repository
+bash
 
 ```bash
 git clone <your-repository-url>
 cd <your-project-folder>
 ```
 
-### 2. Create a virtual environment
+**2\. Create and activate a virtual environment**
+
+bash
 
 ```bash
 python -m venv .venv
 ```
 
-### 3. Activate the virtual environment
+Windows:
 
-**Windows**
+bash
 
 ```bash
 .venv\Scripts\activate
 ```
 
-**macOS / Linux**
+macOS / Linux:
+
+bash
 
 ```bash
 source .venv/bin/activate
 ```
 
-### 4. Install the required dependencies
+**3\. Install dependencies**
+
+bash
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 5. Launch the Streamlit application
+**4\. Start the application**
+
+bash
 
 ```bash
 streamlit run app.py
 ```
 
-The application will start locally and can typically be accessed at:
-
-```
-http://localhost:8501
-```
-
-## 📖 Usage
-
-1. Launch the application.
-2. Navigate to the **Theory** page to learn about chunking methods.
-3. Open the **Playground** page.
-4. Enter or paste your own text.
-5. Select a chunking strategy.
-6. Adjust the available parameters.
-7. Explore the generated chunks and visualizations.
+Open `http://localhost:8501` in your browser.
 
 ## 🎯 Purpose
 
-This project is designed for developers, students, and AI practitioners who want to better understand how chunking affects retrieval performance in modern RAG systems. It serves as both a learning resource and an experimentation tool for comparing different chunking strategies.
+This project aims to simplify the understanding of text chunking techniques and demonstrate how different strategies influence context preservation and retrieval in RAG pipelines.
 
-## 📄 License
+---
 
-This project is available for educational and learning purposes.
+**Explore. Experiment. Visualize. Understand RAG Chunking\!**
